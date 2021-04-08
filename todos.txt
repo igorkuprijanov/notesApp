@@ -1,0 +1,32 @@
+
+MAIN FUNCTIONALITY IS DONE!!!	
+
+//create new user
+--email verification
+--input type 'password'
+
+//user recovery
+
+//cookies
+//JWT verification
+
+//additional functions
+--timed tasks
+--counter tasks
+--list tasks
+
+//front-end
+--general design
+--dark mode
+--mobile version
+--desktop version
+
+----debug
+//sometimes it does not add new tasks,
+and later adds 2 at a time (this happens
+after other operations).
+//id issue, if u do them this way, they
+are not unique. 
+//update note, unresolved promise
+//1.press register, 2.slect field, 3.press 'show usrs'.
+it sends response and renders a dashboard

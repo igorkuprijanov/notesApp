@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div id='mainDiv'>
+    <h1 id="title">Log in</h1>
+    <label style="color:blue;">username</label>
+    <input id="usernameInput">
+    <label>password</label>
+    <input id="passwordInput">
+    <button id="loginButton">login</button>
+    <button id="showAll">show usrs</button>
+    <button id="newUserButton">create new user</button>
+    <div id="registerForm">
+        <label>Name:</label>
+        <input id="newUserName" placeholder="ur name">
+        <p id="usernameError">this username already exists, please choose another one</p>
+        <p id="passwordInstruction">Password must be minimum 8 characters long, contain at least one special character, at least on cpital letter and at least one number</p>
+        <label>Password:</label>
+        <input id="newUserPassword" placeholder="ur password">
+        <label>Repeat password:</label>
+        <input id="newUserPasswordRepeat" placeholder="ur password again">
+        <p id="differentPasswordError">passwords dont match, or dont meet password requierments</p>
+        <button id="registerUserButton">register</button>
+        <button id="cancleRegistration">cancle</button>
+    </div>
+    </div>
+    
+    
+    <div id="dashboard">
+      <div id="userPanel">
+          <img id="userImage">
+          <button id="changeUserImageButton">change user image</button>
+          <div id="userImageMenu">
+              <div id="imageSelection">
+                  
+              </div>
+              <div id="userImageChangeButtonCollection">
+              <button id="cancelUserImageMenu">cancel</button>
+              <form id="imageform" action='/upload' method="POST" enctype="multipart/form-data">
+              <input id="uploadUserImageInput" type="file" name="image">
+              <p id="uploadUserImageButton" onclick="document.getElementById('uploadUserImageInput').click();" >upload image</p>
+              </form>
+              <button id="saveUserImage">save</button>
+              </div>
+          </div>
+           <p>you are logged in as:</p>
+           <h2 id="userName"></h2>
+           <button id="logoutButton">log out</button>
+           <div id="newTaskInput">
+               <button id="addTaskButton">add task</button>
+               <label>Name</label>
+               <input id="newTasksName">
+               <label>Description</label>
+               <input id="newTaskDescription">
+           </div>
+           <button id="deleteUserButton">DELETE USER</button>
+      </div>
+      <div id="notesPanel">
+          <div id="notesContainer">   
+          </div>
+      </div>  
+   </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

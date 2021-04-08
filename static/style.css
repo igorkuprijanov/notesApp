@@ -1,0 +1,195 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+#mainDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 50%;
+    margin-top: 50px;
+}
+
+#title{
+    color: red;
+}
+#loginButton{
+    margin-top: 20px;
+    width: 40%;
+    align-self: center;
+}
+#showAll{
+    width: 40%;
+    margin-top: 20px;
+    align-self: center;
+    background: lightgray;
+}
+
+#newUserButton{
+    width: 40%;
+    margin-top: 20px;
+    align-self: center;
+    color: purple;
+}
+
+#dashboard{
+    border: 1px solid black;
+    width: 80%;
+    height: 80vh;
+    display: none;
+    
+}
+#userPanel{
+    border: 1px solid blue;
+    width: 35%;
+}
+#notesPanel{
+    border: 1px solid red;
+    width: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#notesContainer{
+    border: 1px solid pink;
+    width: 80%;
+    height: 90%;
+}
+.tasksContainer{
+    border: 1px solid black;
+}
+.tasksContainer:not(:first-child){
+     margin-top: 20px;
+}
+.taskHeading{
+    text-decoration: underline;
+    margin-left: 10px;
+}
+.taskDescription{
+    margin-left: 20px;
+}
+.taskDate{
+    display: flex;
+    justify-content:flex-end; 
+    font-style: italic;
+    color: #888888;
+    margin-right: 20px;
+}
+#newTaskInput{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    width: 50%;
+}
+.removeButton{
+    color: red;
+}
+.noteId{
+    display: inline;
+}
+.editButton{
+    color: blue;
+}
+#saveButton{
+    color: green;
+}
+#registerForm{
+    border: 1px solid black;
+    width: 70%;
+    align-self: center;
+    margin-top: 20px;
+    display: none;
+    flex-direction: column;
+    padding: 10px;
+}
+#registerUserButton{
+    margin-top: 20px;
+    width: 50%;
+    align-self: center;
+}
+#registerForm>label{
+    margin-bottom: 5px;
+    margin-top: 5px;
+    text-decoration: underline;
+}
+#deleteUserButton{
+    color: white;
+    background: red;
+    margin-top: 50px;
+}
+#cancleRegistration{
+    color: red;
+    width: 40%;
+    height: 40px;
+    margin-top: 50px;
+    align-self: center;
+}
+#passwordInstruction{
+    color: black;
+    width: 90%;
+    align-self: center;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+#differentPasswordError{
+    color: red;
+    font-size: 12px;
+    width: 90%;
+    align-self: center;
+    display: none;
+}
+#usernameError{
+    width: 90%;
+    color: red;
+    align-self: center;
+    display: none;
+    font-size: 12px;
+}
+#userImage{
+    width: 200px;
+    height: 200px;
+    border: 1px solid gray;
+    border-radius: 100%;
+    background-size: cover;
+    margin: 10px;
+}
+#imageSelection{
+    display: flex;
+    flex-direction: row;
+}
+#userImageMenu{
+    height: 100px;
+    border: 1px solid blue;
+    width: 100%;
+    flex-direction: column;
+    display: none;
+    margin-top: 20px;
+}
+#userImageChangeButtonCollection{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+.defaultImageSelection{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-size: cover;
+    margin: 5px;
+}
+.defaultImageSelection:hover{
+    cursor: pointer;
+    
+}
+#uploadUserImageInput{
+   display: none;
+}
+#uploadUserImageButton{
+    border: 1px solid darkgray;
+    background: lightgray;
+}
