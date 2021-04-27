@@ -4,63 +4,148 @@
     <meta charset="UTF-8">
     <title>login</title>
     <link href="style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id='mainDiv'>
-    <h1 id="title">Log in</h1>
-    <label style="color:blue;">username</label>
-    <input id="usernameInput">
-    <label>password</label>
-    <input id="passwordInput">
-    <button id="loginButton">login</button>
-    <button id="showAll">show usrs</button>
-    <button id="newUserButton">create new user</button>
+    <h1 id="title">Log in or create an account</h1>
+    <label class='textInputLabel'>Username</label>
+    <input class='textInput' id="usernameInput" placeholder="Your username">
+    <label class='textInputLabel'>Password</label>
+    <input class='textInput' id="passwordInput" placeholder="Your password" type='password'>
+    <p id="loginErrorMessage"></p>
+    <button class='grayButton' id="loginButton">LOG IN</button>
+    <button class='grayButton' id="newUserButton">CREATE ACCOUNT</button>
+    <button class='grayButton' id="accountRecovery">RECOVER PASSWORD</button>
     <div id="registerForm">
-        <label>Name:</label>
-        <input id="newUserName" placeholder="ur name">
+        <label class='textInputLabel'>Name:</label>
+        <input class='textInput' id="newUserName" placeholder="ur name">
         <p id="usernameError">this username already exists, please choose another one</p>
         <p id="passwordInstruction">Password must be minimum 8 characters long, contain at least one special character, at least on cpital letter and at least one number</p>
-        <label>Password:</label>
-        <input id="newUserPassword" placeholder="ur password">
-        <label>Repeat password:</label>
-        <input id="newUserPasswordRepeat" placeholder="ur password again">
+        <label class='textInputLabel'>Password:</label>
+        <input class='textInput' id="newUserPassword" placeholder="ur password">
+        <label class='textInputLabel'>Repeat password:</label>
+        <input class='textInput' id="newUserPasswordRepeat" placeholder="ur password again">
+        <label class='textInputLabel'>E-mail</label>
+        <input class='textInput' type="email" id="newUserEmail" placeholder="you email">
         <p id="differentPasswordError">passwords dont match, or dont meet password requierments</p>
-        <button id="registerUserButton">register</button>
-        <button id="cancleRegistration">cancle</button>
+        <button class='grayButton' id="registerUserButton">register</button>
+        <button class="redButton" id="cancleRegistration">cancle</button>
+    </div>
+    <div id="recoveryForm">
+        <p>Enter the e-mail you had registered with, we will send you a ...<i>something</i></p>
+        <input class='textInput' type="email" id="recoveryEmailInput" placeholder="Your email">
+        <button class='grayButton' id="recoverySendButton">SEND</button>
+        <button class="redButton" id="recoveryCancelButton">CANCEL</button>
     </div>
     </div>
-    
+
     
     <div id="dashboard">
-      <div id="userPanel">
+     
+     <div id="mobileBurger" class="mobileBurger">
+         <div class="bar"></div>
+         <div class="bar"></div>
+         <div class="bar"></div>
+     </div>
+     
+      <div id="userPanel" class='userPanel'>
           <img id="userImage">
-          <button id="changeUserImageButton">change user image</button>
+          <button id="changeUserImageButton" class='grayButton'>CHANGE IMAGE</button>
           <div id="userImageMenu">
               <div id="imageSelection">
                   
               </div>
               <div id="userImageChangeButtonCollection">
-              <button id="cancelUserImageMenu">cancel</button>
+              <button id="cancelUserImageMenu" class="redButton">CANCEL</button>
               <form id="imageform" action='/upload' method="POST" enctype="multipart/form-data">
               <input id="uploadUserImageInput" type="file" name="image">
-              <p id="uploadUserImageButton" onclick="document.getElementById('uploadUserImageInput').click();" >upload image</p>
+              <p id="uploadUserImageButton" class='grayButton' onclick="document.getElementById('uploadUserImageInput').click();" >UPLOAD</p>
               </form>
-              <button id="saveUserImage">save</button>
+              <button id="saveUserImage" class='grayButton'>SAVE</button>
               </div>
           </div>
-           <p>you are logged in as:</p>
+           <p id="userIntro">You are logged in as:</p>
            <h2 id="userName"></h2>
-           <button id="logoutButton">log out</button>
+           <button id="logoutButton" class='grayButton'>LOG OUT</button>
            <div id="newTaskInput">
-               <button id="addTaskButton">add task</button>
-               <label>Name</label>
-               <input id="newTasksName">
-               <label>Description</label>
-               <input id="newTaskDescription">
+               <label class="newTaskLabel">Title</label>
+               <input placeholder="Task title" id="newTasksName" class='textInput'>
+               <label  class="newTaskLabel" id="newTaskDescriptionLabel">Description</label>
+               <input placeholder="Task description" id="newTaskDescription" class='textInput'> 
+               <p id="newTaskTypeLabel" class="newTaskLabel">Type</p>
+               <div id="noteTypeSelect">
+               <div>
+               <input id='regularNote' type="radio" checked name="noteType" value='regular'>
+                <label for="regularNote">Regular</label>
+                </div>
+                <div>
+               <input id="timedNote" type="radio" name="noteType" value='timed'>
+               <label for="timedNote">Timed</label>
+               </div>
+               <div>
+               <input id="countNote" type="radio" name="noteType" value='count'>
+               <label for="countNote">Count</label>
+               </div>
+               <div>
+               <input id="listNote" type="radio" name="noteType" value='list'>
+               <label for="listNote">List</label>
+               </div>
+               </div>
+               <div id="typeSpecifications">
+                   <p id="typeInputDescription" class="newTaskLabel">Input time</p>
+                   <div>
+                   <div id="typeInputList">
+                   <input id="typeSpecValue" class="listInputField, textInput" placeholder="23">
+                   </div>
+                   <div id="timeValue">
+                       <select id="timeUnitSelection" name="time">
+                           <option>sec</option>
+                           <option>min</option>
+                           <option>hr</option>
+                       </select>
+                   </div>
+                   <div id="counterValue">
+                       <button id="counterMinus" class="counterBtn">-</button>
+                       <span id="counterSpan">1</span>
+                       <button id="counterPlus" class="counterBtn">+</button>
+                   </div>
+                   <div id="listValue">
+                       <button id="addItemToListBtn">+</button>
+                   </div>
+                   </div>
+               </div>
+               <button id="addTaskButton" class='grayButton'>ADD TASK</button>
            </div>
-           <button id="deleteUserButton">DELETE USER</button>
+           <button id="deleteUserButton" class="redButton">DELETE USER</button>
       </div>
       <div id="notesPanel">
+         <div id="filterContainer">
+             <p id="filterInfo">Filter tasks by:</p>
+             <div id="filterButtonsContainer">
+             <div>
+                 <label for='all'>All</label>
+                 <input class="filterInput" type="radio" name="filter" value="all" checked="checked"> 
+             </div>
+             <div>
+                 <label for='regular'>Regular</label>
+                 <input class="filterInput" type="radio" name="filter" value="regular"> 
+             </div>
+             <div>
+                 <label for='timed'>Timed</label>
+                 <input class="filterInput" type="radio" name="filter" value="timed"> 
+             </div>
+             <div>
+                 <label for='count'>Count</label>
+                 <input class="filterInput" type="radio" name="filter" value="count"> 
+             </div>
+             <div>
+                 <label for='list'>List</label>
+                 <input class="filterInput" type="radio" name="filter" value="list"> 
+             </div>
+             </div>
+         </div>
           <div id="notesContainer">   
           </div>
       </div>  
