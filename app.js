@@ -5,6 +5,9 @@ const bodyParser = require('body-parser')
 const multer = require('multer')
 const dotenv = require('dotenv/config')
 const nodemailer = require('nodemailer')
+const favicon = require('serve-favicon')
+
+app.use(favicon(path.join(__dirname, 'static', 'favicon.ico')))
 
 async function mail(userEmail, subject, text) {
 
@@ -70,7 +73,6 @@ MongoClient.connect(url, {useUnifiedTopology:true})
     const db = client.db('users')
     const usersCollection = db.collection('users')
     
-
 //Send login info
 app.post('/users', urlencodedParser, (req, res)=>{
     console.log(req.body)
@@ -221,6 +223,5 @@ app.get('/', (req, res)=>{
 
 })
     .catch(console.error)
-
 
 app.listen(3000, ()=>{console.log('server is working on port 3000')})
