@@ -163,7 +163,6 @@ function castDashboard(userData){
         newId.setAttribute('class', 'noteId')
         
         var filters = document.querySelectorAll('.filterInput')
-        console.log(filters)
         for(let i=0; i<filters.length; i++){
             if(filters[i].checked && filters[i].defaultValue != 'all'){
                 console.log(filters[i].defaultValue)

@@ -223,4 +223,4 @@ app.get('/', (req, res)=>{
     .catch(console.error)
 
 
-app.listen(3000)
+app.listen(3000, ()=>{console.log('server is working on port 3000')})

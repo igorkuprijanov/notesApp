@@ -182,8 +182,7 @@ body{
     left: 0px;
 }
 #deleteUserButton{
-    position: absolute;
-    bottom: 50px;
+    margin-top: 20px;
 }
 #userImage{
     width: 400px;
