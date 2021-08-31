@@ -1,6 +1,2 @@
-runtime: nodejs14
-
-handlers:
-# Serve a directory as a static resource.
-- url: /static
-static_dir: static
+runtime: nodejs
+env: flex
